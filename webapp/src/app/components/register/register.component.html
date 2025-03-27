@@ -1,0 +1,41 @@
+<div class="flex justify-center w-full mt-10">
+  <div class="bg-white p-8 rounded shadow-md w-6/12 sm:w-96">
+    <h2 class="text-2xl font-bold mb-4">Register</h2>
+
+    <form [formGroup]="registerForm">
+      <!-- Name Input -->
+      <div class="mb-4">
+        <mat-form-field class="w-full">
+          <mat-label>Name</mat-label>
+          <input type="text" formControlName="name" matInput placeholder="Your Name" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Email Input -->
+      <div class="mb-4">
+        <mat-form-field class="w-full">
+          <mat-label>Email</mat-label>
+          <input type="email" formControlName="email" matInput placeholder="Your Email" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Password Input -->
+      <div class="mb-4">
+        <mat-form-field class="w-full">
+          <mat-label>Password</mat-label>
+          <input type="password" formControlName="password" matInput placeholder="Your Password" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Admin Checkbox -->
+      <div class="mb-4 flex items-center">
+        <mat-checkbox formControlName="isAdmin">Register as Admin</mat-checkbox>
+      </div>
+
+      <!-- Register Button -->
+      <button mat-raised-button color="primary" class="w-full" (click)="register()" [disabled]="registerForm.invalid">
+        Register
+      </button>
+    </form>
+  </div>
+</div>
